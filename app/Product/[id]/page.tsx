@@ -1,9 +1,10 @@
-import Home from '@/components/Home'
 import React from 'react'
 
 const Page = () => {
   return (
-    <Home />
+    <div>
+      {/* add a Single Product Page */}
+    </div>
   )
 }
 

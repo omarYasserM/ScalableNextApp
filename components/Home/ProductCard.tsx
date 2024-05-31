@@ -6,28 +6,26 @@ import Image from 'next/image';
 type ProductCardProps = {
     product: Product;
 }
-const ProductCard = (props:ProductCardProps) => {
-    const { product:{title,image,description,category,id,price,rating} } = props;
-  return (
-    <Card className='hover:scale-105'>
-        <CardHeader>
-            <Image src={image} alt={title} height={100} width={140} className='object-contain h-28 mx-auto'/>
-            <CardTitle>{title}</CardTitle>
-        </CardHeader>
+const ProductCard = (props: ProductCardProps) => {
+    const { product: { title, image, description, category, id, price, rating } } = props;
+    return (
+        <Card className='hover:scale-105 transition-all cursor-pointer flex flex-col'>
+            <CardHeader>
+                <Image src={image} alt={title} height={100} width={140} className='object-contain h-28 mx-auto' />
+                <CardTitle>{title}</CardTitle>
+            </CardHeader>
 
-        <CardContent>
-        <p className='text-sm text-opacity-75'>{description.slice(0, 100) + '...'
-        }</p>
-        </CardContent>
+            <CardContent>
+                <p className='text-sm text-opacity-75'>{description.slice(0, 100) + '...'
+                }</p>
+            </CardContent>
 
-        <CardFooter>
-            <div className='flex justify-between w-full'>
+            <CardFooter className='flex justify-between w-full mt-auto'>
                 <p className='text-xs text-opacity-75 font-semibold'>{category}</p>
                 <p className='text-lg font-bold text-opacity-75'>${price}</p>
-            </div>
-        </CardFooter>
-    </Card>
-  )
+            </CardFooter>
+        </Card>
+    )
 }
 
 export default ProductCard
